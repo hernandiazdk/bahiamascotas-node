@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% if (pet === undefined) { %>
+    <h1>No se encontro <%= name %></h1>
+    <% } else { %>
+    <a href="/mascotas?lostandfound_id=<%= pet.lostandfound_id %>">Volver</a>
+    <h1>Nombre: <%= pet.name %></h1>
+    <span> <%= pet.tel %> </span>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+[
+  { "name": "Encontrados", "id": 1 },
+  { "name": "Perdidos", "id": 2 },
+  { "name": "Adopciones", "id": 3 }
+]

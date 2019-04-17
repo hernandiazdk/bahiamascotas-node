@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <p>Se van a mostrar todas las categorias</p>
+    <ul>
+      <% categories.forEach(function(category) { %>
+      <li>
+        <a href="/locales?category_id=<%= category.id %>"
+          ><%= category.name %></a
+        >
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <a href="/mascotas/lostandfound">Volver</a>
+    <h1><%= title %></h1>
+    <ul>
+      <% pets.forEach(function(pet) { %>
+      <li><h1><%= pet.name %></h1></li>
+      <li><span><%= pet.tel %></span></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <a href="/locales/categorias">Volver</a>
+    <h1><%= title %></h1>
+    <p>Se van a mostrar los comercios de la categoria <%= category.name %></p>
+    <ul>
+      <% stores.forEach(function(store) { %>
+      <li>
+        <a href="/locales/show?name=<%= store.name %>"><%= store.name %></a>
+      </li>
+      <li><%= store.address %></li>
+      <li><%= store.category %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

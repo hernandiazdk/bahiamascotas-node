@@ -1,0 +1,7 @@
+[
+  { "name": "Perro1", "tel": "155-555-555", "lostandfound_id": 1 },
+  { "name": "Perro2", "tel": "155-555-555", "lostandfound_id": 2 },
+  { "name": "Perro3", "tel": "155-555-555", "lostandfound_id": 3 },
+  { "name": "Perro4", "tel": "155-555-555", "lostandfound_id": 2 },
+  { "name": "Perro5", "tel": "155-555-555", "lostandfound_id": 1 }
+]

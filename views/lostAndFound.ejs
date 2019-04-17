@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <a href="/">Volver</a>
+    <h1><%= title%></h1>
+
+    <ul>
+      <% lostAndFound.forEach(function(lf){ %>
+      <li>
+        <a href="/mascotas?lostandfound_id=<%= lf.id %>"><%= lf.name%></a>
+      </li>
+      <% } )%>
+    </ul>
+  </body>
+</html>

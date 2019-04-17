@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vista de 1 comercio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% if (store === undefined) { %>
+    <h1>No se encontro el comercio <%= name %></h1>
+    <% }else { %>
+    <a href="/locales?category_id=<%= store.category_id %>">Volver</a>
+    <h1><%= store.name %></h1>
+    <span><%= store.address %></span>
+    <% } %>
+  </body>
+</html>
