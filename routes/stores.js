@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var storeModel = mongoose.model("stores", storeSchema);
+// var storeModel = mongoose.model("stores", storeSchema);
 
 var stores = require("../data/stores.json");
 var categories = require("../data/categories.json");

@@ -3,7 +3,6 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var mongoose = requiere("mongoose");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -32,9 +31,6 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-//Mongoose
-mongoose.connect("mongodb://localhost/my_database", { useNewUrlParser: true });
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -44,6 +40,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
+});
+
+app.listen(3000, function() {
+  console.log("Example app listening on port 3000!");
 });
 
 module.exports = app;
