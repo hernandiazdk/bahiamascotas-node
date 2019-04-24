@@ -3,6 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var monk = require("monk");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -25,6 +26,15 @@ app.use("/", indexRouter);
 app.use("/locales", localesRouter);
 app.use("/mascotas", petsRouter);
 app.use("/users", usersRouter);
+
+//Conection url monk
+var url = "localhost:27017/bahiamascotas";
+
+var db = monk(url);
+
+db.then(() => {
+  console.log("Connected correctly to server");
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

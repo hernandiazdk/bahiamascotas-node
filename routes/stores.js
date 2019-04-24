@@ -1,22 +1,31 @@
 var express = require("express");
 var router = express.Router();
-// var storeModel = mongoose.model("stores", storeSchema);
+var monk = require("monk");
 
-var stores = require("../data/stores.json");
-var categories = require("../data/categories.json");
+var url = "localhost:27017/bahiamascotas";
+var db = monk(url);
+
+// var stores = require("../data/stores.json");
+// var categories = require("../data/categories.json");
 
 /* GET Listado de categorias. */
-router.get("/categorias", function(req, res, next) {
+router.get("/categorias", async (req, res, next) => {
+  var categories = await db.get("categories").find();
   res.render("categories", {
     categories: categories
   });
 });
 
 /* GET listado filtrado por categoria. */
-router.get("/", function(req, res, next) {
+router.get("/", async (req, res, next) => {
+  var categories = await db.get("categories").find();
+
+  var stores = await db.get("stores").find();
+
   var category = categories.find(
     c => c.id.toString() === req.query.category_id
   );
+
   var filteredStores = stores.filter(
     s => s.category_id.toString() === req.query.category_id
   );
@@ -28,8 +37,9 @@ router.get("/", function(req, res, next) {
 });
 
 /* GET Ver un comercio. */
-router.get("/show", function(req, res, next) {
-  var stores = db.stores.find({});
+router.get("/show", async (req, res, next) => {
+  var stores = await db.get("stores").find();
+
   var store = stores.find(c => c.name === req.query.name);
 
   res.render("show", {
